@@ -1,5 +1,5 @@
 import React, {useState, useReducer} from 'react';
-import {initialState, reducer} from './components/reducer';
+import {initialState, reducer} from './reducers/reducer';
 import TodoForm from './components/ToDoForm';
 import ToDo from './components/ToDo';
 import './App.css';
@@ -16,6 +16,7 @@ function App() {
     event.preventDefault();
     dispatch({ type: 'ADD_TODO', payload: newTodo });
     setNewTodo("");
+    console.log(handleChanges);
   };
 
   const toggleCompleted = (id) => {
